@@ -42,3 +42,25 @@ func Fib2(n uint) uint {
 	}
 	return fib_helper(n)
 }
+
+func Fib3(n uint) uint {
+
+	if n == 0 {
+		return 0
+	}
+	if n == 1 {
+		return 1
+	}
+
+	var x uint = 0
+	var x1 uint = 1
+	var x2 uint = 0
+
+	for i := uint(2); i <= n; i++ {
+		x = x1 + x2
+		x2 = x1
+		x1 = x
+	}
+
+	return x
+}
